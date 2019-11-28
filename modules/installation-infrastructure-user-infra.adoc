@@ -18,7 +18,8 @@ page before you create the supporting infrastructure for your cluster.
 
 .Procedure
 
-. Configure DHCP.
+. Set up static IP addresses.
+. Set up an FTP server.
 
 . Provision the required load balancers.
 

@@ -11,12 +11,11 @@
 All the {op-system-first} machines require network in `initramfs` during boot
 to fetch Ignition config from the Machine Config Server.
 
-During the initial boot, the machines require a DHCP server in order to
+During the initial boot, the machines require an FTP server in order to
 establish a network connection to download their Ignition config files.
 
-It is recommended to use the DHCP server to manage the machines for the cluster
-long-term. Ensure that the DHCP server is configured to provide persistent IP
-addresses and host names to the cluster machines.
+Ensure that the machines have persistent IP
+addresses and host names.
 
 The Kubernetes API server must be able to resolve the node names of the cluster
 machines. If the API servers and worker nodes are in different zones, you can

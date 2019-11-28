@@ -22,12 +22,12 @@ ifdef::restricted[]
 the bastion host.
 endif::restricted[]
 ifndef::restricted[]
-a local computer.
+your provisioning machine.
 endif::restricted[]
 
 .Prerequisites
 
-* You must install the cluster from a computer that uses Linux or macOS.
+* You must install the cluster from a machine that runs Linux, for example Red Hat Enterprise Linux 8.
 * You need 500 MB of local disk space to download the installation program.
 
 .Procedure

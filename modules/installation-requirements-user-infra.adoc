@@ -42,9 +42,8 @@ operating system.
 == Network connectivity requirements
 
 All the {op-system-first} machines require network in `initramfs` during boot
-to fetch Ignition config files from the Machine Config Server. During the initial
-boot, the machines require a DHCP server in order to establish a network
-connection to download their Ignition config files.
+to fetch Ignition config files from the Machine Config Server. The machines are configured with static IP
+addresses. No DHCP server is required.
 
 [id="minimum-resource-requirements_{context}"]
 == Minimum resource requirements

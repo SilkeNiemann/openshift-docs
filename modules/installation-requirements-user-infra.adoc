@@ -31,8 +31,7 @@ you install the cluster.
 
 [IMPORTANT]
 ====
-To maintain high availability of your cluster, use separate physical hosts for
-these cluster machines.
+To improve high availability of your cluster, distribute the control plane machines over different z/VM instances. These can, but need not run on the same Z or LinuxONE hardware.
 ====
 
 The bootstrap and control plane machines must use {op-system-first} as the
@@ -104,7 +103,7 @@ On your z/VM instance, set up:
 
 === Disk storage for the z/VM guest virtual machines 
 
-*     FICON attached disk storage (DASDs). These can be z/VM minidisks, fullpack minidisks, or dedicated DASDs.
+*     FICON attached disk storage (DASDs). These can be z/VM minidisks, fullpack minidisks, or dedicated DASDs. If available, use HyperPAV to ensure optimal performance.
 *     FCP attached disk storage
 
 === Storage / Main Memory
@@ -131,7 +130,7 @@ On your z/VM instances, set up:
 
 === Disk storage for the z/VM guest virtual machines 
 
-*   FICON attached disk storage (DASDs). These can be z/VM minidisks, fullpack minidisks, or dedicated DASDs.
+*   FICON attached disk storage (DASDs). These can be z/VM minidisks, fullpack minidisks, or dedicated DASDs. If available, use HyperPAV to ensure optimal performance.
 *   FCP attached disk storage
 
 === Storage / Main Memory

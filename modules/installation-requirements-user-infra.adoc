@@ -14,9 +14,9 @@ of the required machines.
 [id="machine-requirements_{context}"]
 == Required machines
 
-The smallest {product-title} clusters require the following hosts:
+The smallest {product-title} clusters require the following machines:
 
-* One bootstrap machine
+* One temporary bootstrap machine
 
 * Three control plane, or master, machines
 
@@ -44,6 +44,13 @@ operating system.
 All the {op-system-first} machines require network in `initramfs` during boot
 to fetch Ignition config files from the Machine Config Server. The machines are configured with static IP
 addresses. No DHCP server is required.
+
+== IBM Z network connectivity requirements
+
+To install on IBM Z under z/VM, you require a single z/VM virtual NIC in layer 2 mode. You also need:
+
+*   A direct-attached OSA or RoCE network adapter
+*   A z/VM VSwitch set up (for a preferred setup, use OSA link aggregation)
 
 [id="minimum-resource-requirements_{context}"]
 == Minimum resource requirements
@@ -78,6 +85,61 @@ Each cluster machine must meet the following minimum requirements:
 |120 GB
 
 |===
+
+== Minimum IBM Z system requirements
+
+=== Hardware requirements
+*     1 LPAR with 3 IFLs that supports SMT2
+*     1 OSA or RoCE network adapter, or both
+
+=== Operating system requirements
+
+*     One instance of z/VM 7.1
+
+On your z/VM instance, set up:
+
+* 3 guest virtual machines for OCP control plane machines (master nodes)
+* 3 guest virtual mchines  for OCP compute machines (worker nodes)
+* 1 guest virtual machine for the temporary OCP bootstrap machine
+
+=== Disk storage for the z/VM guest virtual machines 
+
+*     FICON attached disk storage (DASDs). These can be z/VM minidisks, fullpack minidisks, or dedicated DASDs.
+*     FCP attached disk storage
+
+=== Storage / Main Memory
+
+*   16 GB for OCP control plane machines (master nodes)
+*   8 GB for OCP compute machines (worker nodes)
+*   16 GB for the temporary OCP bootstrap machine
+
+== Preferred IBM Z system requirements
+
+=== Hardware requirements
+*     3 LPARs with 6 IFLs that support SMT2
+*     1 or 2 OSA or RoCE network adapters, or both
+
+=== Operating system requirements
+
+*   2 or 3 instances of z/VM 7.1 for high availability
+
+On your z/VM instances, set up:
+
+*   3 guest virtual machines for OCP control plane machines, one per z/VM instance
+*   At least 6 guest virtual mchines for OCP compute machines, distributed across the z/VM instances
+*   1 guest virtual machine for the temporary OCP bootstrap machine
+
+=== Disk storage for the z/VM guest virtual machines 
+
+*   FICON attached disk storage (DASDs). These can be z/VM minidisks, fullpack minidisks, or dedicated DASDs.
+*   FCP attached disk storage
+
+=== Storage / Main Memory
+
+*   16 GB for OCP control plane machines (master nodes)
+*   8 GB for OCP compute machines (worker nodes)
+*   16 GB for the temporary OCP bootstrap machine
+
 
 [id="csr_management_{context}"]
 == Certificate signing requests management

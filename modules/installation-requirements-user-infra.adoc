@@ -87,6 +87,8 @@ Each cluster machine must meet the following minimum requirements:
 
 == Minimum IBM Z system requirements
 
+You can install OpenShift 4.2 on IBM Z hardware as of z13, z13s or LinuxONE.
+
 === Hardware requirements
 *     1 LPAR with 3 IFLs that supports SMT2
 *     1 OSA or RoCE network adapter, or both
